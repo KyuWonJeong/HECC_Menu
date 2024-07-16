@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>WEB1 - HTML</title>
-    </head>
-    <body>
-        <h1><a href="index.html">WEB</a></h1>
-        <ol>
-            <li><a href="1.html">HTML</a></li>
-            <li><a href="2.html">CSS</a></li>
-            <li><a href="3.html">JavaScript</a></li>
-        </ol>
-        <h2>HTML이란 무엇인가?</h2>
-        <p><a href="https://www.w3.org/TR/html5/" target="_blank" title="HTML5 specification">
-            Hypertext Markup Language (HTML)</a> is the standard 
-            markup Language for <strong>creating<u> web</u> pages</strong>
-            and web applications. Web browsers receive HTML documents from a web server
-            or from local storage and render them into mutimedia web pages.
-            HTML describes the structure of a web page semantically and originally
-            included cues for the appearance of the document.
-                <img src="html2.jpg" style="width: 800px;" height="450px">
-            ... 생략 ...
-        </p>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>급여 계산기</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="font-family: AppleSDGothicNeoM00;">
+    <div class="container">
+        <h1>급여 계산기</h1>
+        <p style="font-size: 13px; color: gray;">최저시급 9860원</p>
+        <form id="salaryForm">
+            <div id="jobInput">
+                <div class="form-group">
+                    <label for="hourlyRate">시간당 급여</label>
+                    <input type="number" id="hourlyRate" required>
+                </div>
+                <div class="form-group">
+                    <label for="hoursPerDay">하루 일하는 시간</label>
+                    <input type="number" id="hoursPerDay" required>
+                </div>
+                <div class="form-group">
+                    <label for="daysPerWeek">일주일에 일하는 날</label>
+                    <input type="number" id="daysPerWeek" required>
+                </div>
+                <button type="button" id="addJob" style="font-family: AppleSDGothicNeoM00;"><strong>일 추가</strong></button>
+            </div>
+            <div id="jobList"></div>
+            <button type="button" style="font-family: AppleSDGothicNeoM00;" 
+            onclick="calculateTotalSalary()"><strong>계산하기<strong></strong></button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
